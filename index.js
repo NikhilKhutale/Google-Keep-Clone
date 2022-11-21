@@ -2,6 +2,7 @@ import express  from "express";
 import cookieParser from "cookie-parser"
 import notes from "./routes/notes.js"
 import dotenv from "dotenv"
+import path from "path"
 
 dotenv.config();
 
@@ -14,7 +15,6 @@ app.use(cookieParser())
 app.use("/api/note",notes)
 
 if(process.env.NODE_ENV=='production'){
-    const path = require('path')
 
     app.get('/',(req,res)=>{
         app.use(express.static(path.resolve(__dirname,'client','build')))
