@@ -10,6 +10,6 @@ export const db = mysql.createPool({
     password:process.env.DB_PASSWORD,
     database:process.env.DB_DATA,
     ssl:{
-        cert:process.env.CERT
+        ca:process.env.CERT
     }
 })
